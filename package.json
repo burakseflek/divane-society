@@ -1,0 +1,34 @@
+{
+  "name": "divane-society-ad-nda-react-native",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "server": "node server.js",
+    "dev:server": "node server.js",
+    "dev:lan": "node server.js & EXPO_PUBLIC_API_URL=http://$(ipconfig getifaddr en0):4000 npx expo start --host lan --port 8081",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "export:web": "npx expo export --platform web --output-dir dist --clear",
+    "build:preview": "npx eas-cli@latest build --platform all --profile preview",
+    "build:production": "npx eas-cli@latest build --platform all --profile production",
+    "submit:production": "npx eas-cli@latest submit --platform all --profile production"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~54.0.33",
+    "expo-camera": "~17.0.10",
+    "expo-image-picker": "~17.0.11",
+    "expo-location": "~19.0.8",
+    "expo-notifications": "~0.32.17",
+    "expo-status-bar": "~3.0.9",
+    "expo-task-manager": "~14.0.9",
+    "expo-video": "~3.0.16",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-web": "^0.21.0"
+  },
+  "private": true
+}

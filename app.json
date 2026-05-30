@@ -1,0 +1,99 @@
+{
+  "expo": {
+    "name": "Divane Society",
+    "slug": "divane-society",
+    "version": "1.0.0",
+    "scheme": "divanesociety",
+    "orientation": "portrait",
+    "icon": "./assets/divane-society-icon.png",
+    "userInterfaceStyle": "automatic",
+    "primaryColor": "#9FC9F3",
+    "newArchEnabled": true,
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Divane Society QR kodlarını okutmak için kameraya erişmek istiyor."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Divane Society story ve gönderi paylaşmak için fotoğraf arşivine erişmek istiyor."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#9FC9F3",
+          "defaultChannel": "divane-society"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Divane Society, mekana geldiğinde QR katılım hatırlatması göndermek için konumunu kullanır.",
+          "locationWhenInUsePermission": "Divane Society, mekana geldiğinde QR katılım hatırlatması göndermek için konumunu kullanır.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      "expo-video"
+    ],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F8FAFC"
+    },
+    "ios": {
+      "bundleIdentifier": "com.divanesociety.app",
+      "buildNumber": "1",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Divane Society QR kodlarını okutmak için kameraya erişmek istiyor.",
+        "NSPhotoLibraryUsageDescription": "Divane Society story ve gönderi paylaşmak için fotoğraf arşivine erişmek istiyor.",
+        "NSPhotoLibraryAddUsageDescription": "Divane Society seçtiğin medya içeriklerini paylaşım için hazırlamak ister.",
+        "NSLocationWhenInUseUsageDescription": "Divane Society, mekana geldiğinde QR katılım hatırlatması göndermek için konumunu kullanır.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Divane Society, uygulama kapalıyken de mekana geldiğinde QR katılım hatırlatması göndermek için konumunu kullanır.",
+        "UIBackgroundModes": [
+          "location",
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.divanesociety.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/divane-society-icon.png",
+        "backgroundColor": "#F8FAFC"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/divane-society-icon.png"
+    },
+    "extra": {
+      "productionApiUrl": "https://api.divanesociety.app",
+      "privacyPolicyUrl": "https://divanesociety.app/privacy",
+      "supportEmail": "support@divanesociety.app",
+      "eas": {
+        "projectId": "652540c3-45f8-4d03-8586-06193677a683"
+      }
+    },
+    "owner": "burakseflek"
+  }
+}
