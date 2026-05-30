@@ -48,7 +48,6 @@
     },
     "ios": {
       "bundleIdentifier": "com.divanesociety.app",
-      "buildNumber": "1",
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "Divane Society QR kodlarını okutmak için kameraya erişmek istiyor.",
@@ -59,12 +58,12 @@
         "UIBackgroundModes": [
           "location",
           "remote-notification"
-        ]
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "package": "com.divanesociety.app",
-      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/divane-society-icon.png",
         "backgroundColor": "#F8FAFC"
