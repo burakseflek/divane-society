@@ -39,12 +39,13 @@ DIVANE_PUBLIC_API_ORIGIN=https://api.divanesociety.app
 4. `New Project` seç.
 5. `Deploy from GitHub repo` seç.
 6. Divane Society reposunu seç.
-7. Railway proje ayarlarında `Variables` bölümüne şunları ekle:
+7. Railway proje ayarlarında `Variables` bölümüne önce sadece şunu ekle:
 
 ```bash
 DIVANE_DB_DIR=/data
-DIVANE_PUBLIC_API_ORIGIN=https://api.divanesociety.app
 ```
+
+İlk testte `DIVANE_PUBLIC_API_ORIGIN` ekleme. Böylece medya linkleri Railway'in geçici domaininden üretilir.
 
 8. Railway servis ayarlarında `Volume` ekle.
 9. Volume mount path değerini `/data` yap.
@@ -80,6 +81,14 @@ https://api.divanesociety.app/api/health
 
 adresinin çalışması gerekir.
 
+Bu çalıştıktan sonra Railway `Variables` bölümüne şunu ekle veya varsa güncelle:
+
+```bash
+DIVANE_PUBLIC_API_ORIGIN=https://api.divanesociety.app
+```
+
+Ardından Railway'de yeni deploy başlat.
+
 ## EAS Ortam Değişkeni
 
 Canlı API domaini çalıştıktan sonra Expo/EAS tarafında production ve preview ortamına şu değer girilmeli:
@@ -89,6 +98,12 @@ EXPO_PUBLIC_API_URL=https://api.divanesociety.app
 ```
 
 Bu değer `eas.json` içinde de hazırdır.
+
+Custom domain bağlanmadan önce preview testleri için geçici Railway domaini kullanılabilir:
+
+```bash
+EXPO_PUBLIC_API_URL=https://web-production-0ec71.up.railway.app
+```
 
 ## Docker ile Yayın
 

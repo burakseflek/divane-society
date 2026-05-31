@@ -18,7 +18,7 @@
       },
       "env": {
         "EXPO_PUBLIC_APP_ENV": "preview",
-        "EXPO_PUBLIC_API_URL": "https://api.divanesociety.app"
+        "EXPO_PUBLIC_API_URL": "https://web-production-0ec71.up.railway.app"
       }
     },
     "production": {
