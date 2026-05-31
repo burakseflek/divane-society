@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
+    "api:start": "node server.js",
     "server": "node server.js",
     "dev:server": "node server.js",
     "dev:lan": "node server.js & EXPO_PUBLIC_API_URL=http://$(ipconfig getifaddr en0):4000 npx expo start --host lan --port 8081",
