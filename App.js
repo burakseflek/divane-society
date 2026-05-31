@@ -36,6 +36,7 @@ const NOTIFICATION_PLAN_KEY = 'divane_society_notification_plan_v1';
 const DIVANE_GEOFENCE_TASK = 'divane-society-geofence-reminder';
 const NOTIFICATION_CHANNEL_ID = 'divane-society';
 const STORY_DURATION_MS = 20000;
+const FALLBACK_PUBLIC_API_URL = 'https://web-production-0ec71.up.railway.app';
 const venueLogos = {
   lounge: require('./assets/divane-lounge-logo.png'),
   mey: require('./assets/divane-mey-logo.png'),
@@ -251,8 +252,9 @@ const getApiBaseUrl = () => {
   if (envUrl) return envUrl.replace(/\/$/, '');
   const scriptUrl = NativeModules?.SourceCode?.scriptURL;
   const nativeHost = scriptUrl?.match(/^https?:\/\/([^:/]+)/)?.[1];
-  if (nativeHost) return `http://${nativeHost}:4000`;
+  if (nativeHost && __DEV__) return `http://${nativeHost}:4000`;
   const webHost = typeof window !== 'undefined' ? window.location?.hostname : null;
+  if (!__DEV__) return FALLBACK_PUBLIC_API_URL;
   return `http://${webHost || '127.0.0.1'}:4000`;
 };
 
@@ -3185,7 +3187,7 @@ function MediaPickerInline({ media, onPick, onUploadMedia, aspectMode = 'post' }
       if (servedMedia?.uploadFailed) {
         setUploadProgress(0);
         setLocalMedia(null);
-        Alert.alert('Yükleme başarısız', `${servedMedia.error || 'Video/fotoğraf servise yüklenemedi.'}\n\nMac tarafında demo server açık olmalı; aksi halde müşteri tarafına yayınlanamaz.`);
+        Alert.alert('Yükleme başarısız', `${servedMedia.error || 'Video/fotoğraf servise yüklenemedi.'}\n\nCanlı API adresine erişilebildiğinden emin ol: ${API_BASE_URL}`);
         return;
       }
       setLocalMedia(servedMedia);
